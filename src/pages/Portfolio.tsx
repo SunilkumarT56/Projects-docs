@@ -12,12 +12,13 @@ export const Portfolio: React.FC = () => {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center',
       minHeight: '100vh',
       textAlign: 'center',
       padding: 'var(--space-8)',
+      paddingTop: '15vh', // Optical center (higher than geometric center)
       position: 'relative',
-      overflow: 'hidden'
+      overflowX: 'hidden', // Prevent horizontal scroll, allow vertical
+      justifyContent: 'flex-start' // Align top with padding
     }}>
       <TechBackground />
       <FloatingFlag />
@@ -80,6 +81,7 @@ export const Portfolio: React.FC = () => {
         }}>
           <span style={{ color: 'var(--accent-primary)', marginRight: '8px' }}>&gt;</span>
           CSE @ PSG Tech <span style={{ color: 'var(--border-subtle)', margin: '0 8px' }}>//</span> 
+          Software Developer <span style={{ color: 'var(--border-subtle)', margin: '0 8px' }}>//</span> 
           Backend Developer <span style={{ color: 'var(--border-subtle)', margin: '0 8px' }}>//</span> 
           DevOps & Distributed Systems <span style={{ color: 'var(--border-subtle)', margin: '0 8px' }}>//</span> 
           System Design
@@ -251,6 +253,84 @@ export const Portfolio: React.FC = () => {
             </div>
           </Link>
 
+          {/* Video Pipeline Card (Full Width) */}
+          <Link to="/video-pipeline" style={{ textDecoration: 'none', gridColumn: 'span 2' }}>
+            <div 
+              style={{
+                background: 'var(--bg-panel)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '8px',
+                padding: 'var(--space-8)',
+                textAlign: 'left',
+                transition: 'transform 0.2s, border-color 0.2s',
+                cursor: 'pointer',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.borderColor = 'var(--text-primary)';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.borderColor = 'var(--border-subtle)';
+              }}
+            >
+              <h3 style={{ fontSize: '1.75rem', marginBottom: 'var(--space-2)' }}>Event-Driven Video Publishing Pipeline for YouTube</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', flex: 1 }}>
+                A scalable pipeline for processing and publishing videos to YouTube using event-driven architecture.
+              </p>
+              <div style={{ 
+                marginTop: 'var(--space-4)', 
+                fontFamily: 'var(--font-mono)', 
+                fontSize: '0.85rem', 
+                color: 'var(--accent-highlight)' 
+              }}>
+                View Documentation &rarr;
+              </div>
+            </div>
+          </Link>
+
+          {/* Rate Limiter Card (Full Width) */}
+          <Link to="/rate-limiter" style={{ textDecoration: 'none', gridColumn: 'span 2' }}>
+            <div 
+              style={{
+                background: 'var(--bg-panel)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '8px',
+                padding: 'var(--space-8)',
+                textAlign: 'left',
+                transition: 'transform 0.2s, border-color 0.2s',
+                cursor: 'pointer',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.borderColor = 'var(--text-primary)';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.borderColor = 'var(--border-subtle)';
+              }}
+            >
+              <h3 style={{ fontSize: '1.75rem', marginBottom: 'var(--space-2)' }}>High-Throughput Rate Limiter</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', flex: 1 }}>
+                A distributed rate limiting system capable of handling millions of requests per second with low latency.
+              </p>
+              <div style={{ 
+                marginTop: 'var(--space-4)', 
+                fontFamily: 'var(--font-mono)', 
+                fontSize: '0.85rem', 
+                color: 'var(--accent-highlight)' 
+              }}>
+                View Documentation &rarr;
+              </div>
+            </div>
+          </Link>
+
           {/* DBDP Card */}
           <Link to="/dbdp" style={{ textDecoration: 'none' }}>
             <div 
@@ -290,8 +370,8 @@ export const Portfolio: React.FC = () => {
             </div>
           </Link>
 
-          {/* WS Architecture Card */}
-          <Link to="/ws" style={{ textDecoration: 'none' }}>
+          {/* LeetCode Clone Card */}
+          <Link to="/leetcode" style={{ textDecoration: 'none' }}>
             <div 
               style={{
                 background: 'var(--bg-panel)',
@@ -314,9 +394,9 @@ export const Portfolio: React.FC = () => {
                 e.currentTarget.style.borderColor = 'var(--border-subtle)';
               }}
             >
-              <h3 style={{ fontSize: '1.75rem', marginBottom: 'var(--space-2)' }}>Scalable WebSockets</h3>
+              <h3 style={{ fontSize: '1.75rem', marginBottom: 'var(--space-2)' }}>LeetCode Clone</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', flex: 1 }}>
-                Scaling real-time messaging using NGINX, Redis Pub/Sub, and Docker.
+                A full-stack clone of the popular coding platform featuring real-time code execution, problem management, and user authentication.
               </p>
               <div style={{ 
                 marginTop: 'var(--space-4)', 

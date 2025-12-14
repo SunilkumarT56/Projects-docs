@@ -5,10 +5,7 @@ import { Starfield } from './components/Starfield';
 import { Portfolio } from './pages/Portfolio';
 
 import { DBDPLayout } from './components/DBDPLayout';
-import { WSLayout } from './components/WSLayout';
-
 // ADK Pages
-import { Home } from './pages/Home';
 import { SystemOverview } from './pages/SystemOverview';
 import { EventSources } from './pages/EventSources';
 import { IngestionLayer } from './pages/IngestionLayer';
@@ -63,13 +60,17 @@ import { FailureHandlingDBDP } from './pages/dbdp/FailureHandlingDBDP';
 import { ScalabilityDBDP } from './pages/dbdp/ScalabilityDBDP';
 import { DesignDecisionsDBDP } from './pages/dbdp/DesignDecisionsDBDP';
 
-// WS Pages
-import { HomeWS } from './pages/ws/HomeWS';
-import { ArchitectureWS } from './pages/ws/ArchitectureWS';
-import { ScalingWS } from './pages/ws/ScalingWS';
+// Rate Limiter
+import { RateLimiter } from './pages/RateLimiter';
+
+// Video Pipeline
+import { VideoPipeline } from './pages/VideoPipeline';
 
 // Contact Pipeline
 import { ContactPipeline } from './pages/ContactPipeline';
+
+// LeetCode Clone
+import { HomeLeetCode } from './pages/leetcode/HomeLeetCode';
 
 function App() {
   return (
@@ -78,10 +79,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Portfolio />} />
         <Route path="/contact-pipeline" element={<ContactPipeline />} />
+        <Route path="/leetcode" element={<HomeLeetCode />} />
+        <Route path="/rate-limiter" element={<RateLimiter />} />
+        <Route path="/video-pipeline" element={<VideoPipeline />} />
         
         {/* ADK Documentation Routes */}
         <Route path="adk" element={<Layout />}>
-          <Route index element={<Home />} />
+          <Route index element={<SystemOverview />} />
           <Route path="system-overview" element={<SystemOverview />} />
           <Route path="event-sources" element={<EventSources />} />
           <Route path="ingestion" element={<IngestionLayer />} />
@@ -141,12 +145,6 @@ function App() {
           <Route path="design-decisions" element={<DesignDecisionsDBDP />} />
         </Route>
 
-        {/* WS Documentation Routes */}
-        <Route path="ws" element={<WSLayout />}>
-          <Route index element={<HomeWS />} />
-          <Route path="architecture" element={<ArchitectureWS />} />
-          <Route path="scaling" element={<ScalingWS />} />
-        </Route>
         
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
