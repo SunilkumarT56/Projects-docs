@@ -6,6 +6,7 @@ import { Portfolio } from './pages/Portfolio';
 
 import { DBDPLayout } from './components/DBDPLayout';
 // ADK Pages
+import { HomeADK } from './pages/HomeADK';
 import { SystemOverview } from './pages/SystemOverview';
 import { EventSources } from './pages/EventSources';
 import { IngestionLayer } from './pages/IngestionLayer';
@@ -85,7 +86,7 @@ function App() {
         
         {/* ADK Documentation Routes */}
         <Route path="adk" element={<Layout />}>
-          <Route index element={<SystemOverview />} />
+          <Route index element={<HomeADK />} />
           <Route path="system-overview" element={<SystemOverview />} />
           <Route path="event-sources" element={<EventSources />} />
           <Route path="ingestion" element={<IngestionLayer />} />

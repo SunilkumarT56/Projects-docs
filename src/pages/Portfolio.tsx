@@ -54,7 +54,7 @@ export const Portfolio: React.FC = () => {
         }}
       >
         <span style={{ marginRight: 'var(--space-2)', fontSize: '1.1em' }}>⬆</span>
-        This project is built and deployed using my own custom deployment engine.
+        This portfolio is built and deployed using my own custom deployment engine.
       </Link>
       <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <h1 style={{ 

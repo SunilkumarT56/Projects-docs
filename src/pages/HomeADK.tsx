@@ -18,7 +18,7 @@ import {
   SiApache
 } from 'react-icons/si';
 
-export const Home: React.FC = () => {
+export const HomeADK: React.FC = () => {
   return (
     <div>
       <h1 style={{ marginBottom: 'var(--space-6)', fontSize: '2.5rem' }}>ADK – Developer Activity Knowledge Graph</h1>
